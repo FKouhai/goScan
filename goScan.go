@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -22,7 +23,7 @@ func main() {
 }
 
 func tcp_scan(ip_addr string, port string) {
-	_, err := net.DialTimeout("tcp", ip_addr+":"+port, 5*1000*1000*100)
+	_, err := net.DialTimeout("tcp", ip_addr+":"+port, 5*time.Second)
 	if err != nil {
 		//		fmt.Println(err)
 		//fmt.Println(port, " Is not reachable")
